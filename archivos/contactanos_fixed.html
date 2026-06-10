@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contacto - Harold Matamoros</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='contactanos-new.css') }}">
+  <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Harold Matamoros</h1>
+      <p>Ingeniería en Sistemas de Información</p>
+    </div>
+  </header>
+
+  <nav class="menu">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="menu-content" id="menuContent">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="educacion.html">Educación</a></li>
+        <li><a href="contactanos.html">Contacto</a></li>
+        <li><a href="index1.html">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <p class="texto-contacto">
+        Si deseas comunicarte conmigo, puedes enviarme un mensaje llenando el siguiente formulario.
+    </p>
+
+    <form class="formulario-contacto" id="formularioContacto" method="POST" action="/guardar_contacto">
+
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+        </div>
+
+        <div class="campo">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono">
+        </div>
+
+        <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar" id="btnEnviar">
+            Enviar Mensaje
+        </button>
+        
+        <div id="mensaje-respuesta" class="mensaje-respuesta"></div>
+
+    </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Harold Matamoros | Todos los derechos reservados</p>
+    <p>Email: harold@example.com | Tel: +505 8888-8888</p>
+  </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f9f9f9;
+  font-family: Verdana, sans-serif;
+  color: #333;
+}
+
+header {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+header div h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+header div p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* MENÚ HAMBURGUESA */
+nav {
+  background-color: #0066cc;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.menu-content {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #0066cc;
+  padding-top: 80px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.menu-content.active {
+  left: 0;
+}
+
+.menu-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-content ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-content ul li a {
+  display: block;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.menu-content ul li a:hover {
+  background: linear-gradient(90deg, #13cbd5, #341bf0);
+  padding-left: 25px;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.educacion-content {
+  background: #adc6e0;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.educacion-content h2 {
+  color: #004d99;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.card-edu {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-edu h3 {
+  color: #004d99;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.card-edu h4 {
+  color: #004d99;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card-edu p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.card-edu ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.card-edu li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+    font-size: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .educacion-content {
+    padding: 20px;
+  }
+
+  .educacion-content h2 {
+    font-size: 20px;
+  }
+
+  .card-edu {
+    padding: 20px;
+  }
+
+  .card-edu h3 {
+    font-size: 18px;
+  }
+
+  .menu-content {
+    width: 200px;
+    left: -200px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  main {
+    padding: 15px 10px;
+  }
+
+  .educacion-content {
+    padding: 15px;
+  }
+
+  .educacion-content h2 {
+    font-size: 18px;
+  }
+
+  .card-edu {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .card-edu h3 {
+    font-size: 16px;
+  }
+
+  .card-edu h4 {
+    font-size: 14px;
+  }
+
+  .menu-content {
+    width: 100%;
+    left: -100%;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+}
